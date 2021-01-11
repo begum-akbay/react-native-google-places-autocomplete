@@ -753,7 +753,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
             props.renderHeaderComponent &&
             props.renderHeaderComponent(stateText)
           }
-          ListFooterComponent={_renderPoweredLogo}
+          ListFooterComponent={props.listFooterComponent && _renderPoweredLogo}
           {...props}
         />
       );
