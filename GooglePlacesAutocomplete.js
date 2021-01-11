@@ -671,7 +671,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
     if(_shouldShowPoweredLogo()){
       return this._renderPoweredLogo
     }
-    return this.props.listFooterComponent()
+    return props.listFooterComponent()
   }
 
   const _renderPoweredLogo = () => {
