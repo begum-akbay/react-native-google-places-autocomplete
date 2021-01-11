@@ -667,6 +667,13 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
 
   const _onFocus = () => setListViewDisplayed(true);
 
+  const _renderFooterComponent = () => {
+    if(_shouldShowPoweredLogo()){
+      return this._renderPoweredLogo
+    }
+    return this.props.listFooterComponent()
+  }
+
   const _renderPoweredLogo = () => {
     if (!_shouldShowPoweredLogo()) {
       return null;
@@ -753,7 +760,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
             props.renderHeaderComponent &&
             props.renderHeaderComponent(stateText)
           }
-          ListFooterComponent={props.listFooterComponent && _renderPoweredLogo}
+          ListFooterComponent={_renderFooterComponent}
           {...props}
         />
       );
